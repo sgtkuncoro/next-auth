@@ -1,14 +1,18 @@
-import Layout from "src/components/Layout";
+import { Layout, Breadcrumb } from "antd";
+const { Content } = Layout;
 
-const Home = () => (
-  <Layout>
-    <h1>Home</h1>
+import ProtectedLayout from "src/components/Layout/MainLayout";
 
-    <p>
-      This example home page
-      <b>signed and encrypted cookie to store session data</b>.
-    </p>
-  </Layout>
+const Index = () => (
+  <ProtectedLayout>
+    <Content className="mx-auto">
+      <Breadcrumb className="m-4">
+        <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+      </Breadcrumb>
+      <Layout className="m-4">Home Content</Layout>
+    </Content>
+  </ProtectedLayout>
 );
 
-export default Home;
+export default Index;
